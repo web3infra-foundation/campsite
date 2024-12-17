@@ -23,10 +23,10 @@ echo "\nChecking encryption keys...\n===========================================
 bin/rails dev:setup_credentials
 
 echo "\nRunning redis-server in the background...\n============================================================"
-brew services start redis &
+brew services restart redis &
 
 echo "\nSetting up database...\n============================================================"
-brew services start mysql@8.0
+brew services restart mysql@8.0
 rails db:setup
 
 echo "\nLoading time zones into database...\n============================================================"
