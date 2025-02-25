@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:1
 
-FROM node:20-slim as base
+FROM node:22-slim as base
 
 # configure pnpm
 ENV PNPM_HOME="/pnpm"
@@ -44,7 +44,7 @@ ARG SENTRY_PROJECT
 
 RUN apt-get update -y && apt-get install -y ca-certificates
 
-RUN SENTRY_AUTH_TOKEN=${SENTRY_AUTH_TOKEN} SENTRY_ORG=${SENTRY_ORG} SENTRY_PROJECT=${SENTRY_PROJECT} npx turbo run sentry:sourcemaps --filter=@campsite/sync-server
+# RUN SENTRY_AUTH_TOKEN=${SENTRY_AUTH_TOKEN} SENTRY_ORG=${SENTRY_ORG} SENTRY_PROJECT=${SENTRY_PROJECT} npx turbo run sentry:sourcemaps --filter=@campsite/sync-server
 
 
 FROM base AS runner

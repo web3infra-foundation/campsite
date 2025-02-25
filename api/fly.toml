@@ -3,7 +3,7 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "campsite-api"
+app = "mega-campsite-api"
 primary_region = "iad"
 kill_signal = "SIGINT"
 kill_timeout = 60
@@ -56,5 +56,5 @@ kill_timeout = 60
   url_prefix = "/"
 
 [[vm]]
-  size = "shared-cpu-2x"
-  memory = "1536mb"
+  size = "shared-cpu-1x"
+  memory = "1024mb"

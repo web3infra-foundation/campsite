@@ -16,12 +16,13 @@ env:
   MYSQL_PASSWORD: root
   DATABASE_HOST: 127.0.0.1
   RAILS_ENV: test
+  # ImageOS: ubuntu24
 
 jobs:
   test:
     name: tests
-    runs-on:
-      labels: warp-ubuntu-latest-x64-8x
+    runs-on: ubuntu-latest
+      # labels: warp-ubuntu-latest-x64-8x
     timeout-minutes: 10
     permissions:
       contents: write
@@ -37,7 +38,7 @@ jobs:
         id: gen-token
         uses: tibdex/github-app-token@v2.1.0
         with:
-          app_id: 290357
+          app_id: 1157102
           private_key: ${{ secrets.DEPLOYBOT_TOKEN }}
 
       - uses: actions/checkout@v4

@@ -113,8 +113,8 @@ Rails.application.configure do
   config.hosts << "auth.campsite.com"
   config.hosts << "api.campsite.com"
 
-  config.hosts << "campsite-api.fly.dev"
+  config.hosts << "mega-campsite-api.fly.dev"
 
   # required to access the app via Fly private network
-  config.hosts << "campsite-api.internal"
+  config.hosts << "mega-campsite-api.internal"
 end
