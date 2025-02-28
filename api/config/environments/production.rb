@@ -53,7 +53,7 @@ Rails.application.configure do
 
   # Include generic and useful information about system operation, but avoid logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII).
-  config.log_level = :info
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags.
   config.log_tags = [:request_id]
@@ -101,9 +101,10 @@ Rails.application.configure do
 
   config.active_record.async_query_executor = :global_thread_pool
 
-  config.hosts << "admin.campsite.design"
-  config.hosts << "auth.campsite.design"
-  config.hosts << "api.campsite.design"
+  config.hosts << "admin.benjamin747.com"
+  config.hosts << "auth.benjamin747.com"
+  config.hosts << "api.benjamin747.com"
+  config.hosts << "benjamin747.com"
 
   config.hosts << "admin.campsite.co"
   config.hosts << "auth.campsite.co"
