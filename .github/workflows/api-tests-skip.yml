@@ -6,7 +6,6 @@ on:
     paths-ignore:
       - '.github/workflows/api-tests.yml'
       - 'api/**'
-  push:
 
 jobs:
   # names must match those in tests.yml

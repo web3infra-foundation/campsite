@@ -3,15 +3,19 @@ default: &default
   encoding: utf8mb4
   pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } * ENV.fetch('RAILS_MAX_ASYNC_QUERIES') { 5 } %>
   username: root
-  password:
+  password: root@1234R
   port: 3306
 
 development:
   primary:
     <<: *default
-    database: <%= ENV['ENABLE_PSDB'] ? 'campsite-api' : 'campsite_api_development' %>
-    host: <%= ENV['ENABLE_PSDB'] ? '127.0.0.1' : '' %>
-    port: <%= ENV['ENABLE_PSDB'] ? 3305 : ENV.fetch("DB_PORT", 3306) %>
+    # database: <%= ENV['ENABLE_PSDB'] ? 'campsite-api' : 'campsite_api_development' %>
+    # host: <%= ENV['ENABLE_PSDB'] ? '127.0.0.1' : '' %>
+    # port: <%= ENV['ENABLE_PSDB'] ? 3305 : ENV.fetch("DB_PORT", 3306) %>
+    database: campsite_api_development
+    host: localhost
+    port: 3306
+    ssl_mode: required
   primary_replica:
     <<: *default
     database: <%= ENV['ENABLE_PSDB'] ? 'campsite-api' : 'campsite_api_development' %>
@@ -62,14 +66,14 @@ production:
     <<: *default
     username: <%= Rails.application.credentials.dig(:mysql, :username) %>
     password: <%= Rails.application.credentials.dig(:mysql, :password) %>
-    database: campsite-api
+    database: campsite_api
     host: <%= Rails.application.credentials.dig(:mysql, :host) %>
-    ssl_mode: verify_identity
+    ssl_mode: required
   primary_replica:
     <<: *default
-    username: <%= Rails.application.credentials.planetscale_replica&.fetch(:username) %>
-    password: <%= Rails.application.credentials.planetscale_replica&.fetch(:password) %>
-    database: <%= Rails.application.credentials.planetscale_replica&.fetch(:database) %>
-    host: <%= Rails.application.credentials.planetscale_replica&.fetch(:host) %>
-    ssl_mode: verify_identity
+    username: <%= Rails.application.credentials.dig(:mysql, :username) %>
+    password: <%= Rails.application.credentials.dig(:mysql, :password) %>
+    database: campsite_api
+    host: <%= Rails.application.credentials.dig(:mysql, :host) %>
+    ssl_mode: required
     replica: true

@@ -2,7 +2,7 @@
 
 module Campsite
   DEV_APP_URL = URI.parse(ENV.fetch("DEV_APP_URL", "http://app.campsite.test:3000"))
-  PROD_DOT_COM_APP_URL = URI.parse("https://app.campsite.com")
+  PROD_DOT_COM_APP_URL = URI.parse("https://app.gitmono.com")
 
   DEV_DESKTOP_APP_PROTOCOL = "campsite-dev://"
   PROD_DESKTOP_APP_PROTOCOL = "campsite://"
@@ -14,7 +14,7 @@ module Campsite
   PROD_HTML_TO_IMAGE_URL = URI.parse("http://html-to-image.internal:9222")
 
   DEV_MARKETING_SITE_URL = URI.parse("http://localhost:3003")
-  PROD_MARKETING_SITE_URL = URI.parse("https://campsite.com")
+  PROD_MARKETING_SITE_URL = URI.parse("https://gitmono.com")
 
   BRAND_ORANGE_HEX_CODE = "#f97316"
 
