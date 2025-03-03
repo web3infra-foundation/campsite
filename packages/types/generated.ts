@@ -4247,7 +4247,7 @@ export enum ContentType {
 }
 
 export class HttpClient<SecurityDataType = unknown> {
-  public baseUrl: string = 'https://api.campsite.com'
+  public baseUrl: string = 'https://api.gitmono.com'
   private securityData: SecurityDataType | null = null
   private securityWorker?: ApiConfig<SecurityDataType>['securityWorker']
   private abortControllers = new Map<CancelToken, AbortController>()
@@ -4447,8 +4447,8 @@ function dataTaggedQueryKey(key: unknown) {
 /**
  * @title Campsite API
  * @version 2.0.0
- * @baseUrl https://api.campsite.com
- * @contact <support@campsite.com>
+ * @baseUrl https://api.gitmono.com
+ * @contact <support@gitmono.com>
  */
 export class Api<SecurityDataType extends unknown> extends HttpClient<SecurityDataType> {
   organizations = {

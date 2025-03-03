@@ -229,14 +229,14 @@ export function NewOrganizationForm() {
                   value={slug}
                   onChange={(value) => setValue('slug', value)}
                   additionalClasses='h-10'
-                  prefix='app.campsite.com/'
+                  prefix='app.gitmono.com/'
                   placeholder='Required'
                   required
                   autoFocus
                 />
               ) : (
                 <span className='text-quaternary flex max-w-full items-center py-0.5 text-sm'>
-                  app.campsite.com/<span className='text-secondary truncate'>{slug}</span>
+                  app.gitmono.com/<span className='text-secondary truncate'>{slug}</span>
                   {name.length > 0 && (
                     <Tooltip label='Change your URL'>
                       <button

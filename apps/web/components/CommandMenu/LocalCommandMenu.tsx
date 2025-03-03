@@ -239,7 +239,7 @@ function Home({ navigate }: { navigate: NavigateFn }) {
   const ffUrl =
     !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
       ? 'http://admin.campsite.test:3001/admin/features/'
-      : 'https://admin.campsite.com/admin/features'
+      : 'https://admin.gitmono.com/admin/features'
   const { data: organization } = useGetCurrentOrganization()
 
   return (
