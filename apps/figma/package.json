@@ -58,12 +58,10 @@
       "allowedDomains": [
         "https://fonts.googleapis.com",
         "https://fonts.gstatic.com",
-        "https://api.campsite.design",
-        "https://auth.campsite.design",
-        "https://api.campsite.com",
-        "https://auth.campsite.com",
-        "https://campsite-media.s3.amazonaws.com",
-        "https://campsite.imgix.net",
+        "https://api.gitmono.com",
+        "https://auth.gitmono.com",
+        "https://gitmono.s3.amazonaws.com",
+        "https://gitmono.imgix.net",
         "https://res.cloudinary.com",
         "https://sockjs-us3.pusher.com",
         "wss://ws-us3.pusher.com"

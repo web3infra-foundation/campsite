@@ -41,29 +41,29 @@ jobs:
           default_bump: major
           fetch_all_tags: true
 
-      - name: Notify success
-        uses: campsite/campsite-github-action@v1.0.0
-        with:
-          api_key: ${{ secrets.CAMPBOT_API_KEY }}
-          action_type: create_message
-          thread_id: ${{ env.DEPLOY_QUEUE_THREAD_ID }}
-          content: |
-            **🖼️ HTML to Image deployed**
+      # - name: Notify success
+      #   uses: campsite/campsite-github-action@v1.0.0
+      #   with:
+      #     api_key: ${{ secrets.CAMPBOT_API_KEY }}
+      #     action_type: create_message
+      #     thread_id: ${{ env.DEPLOY_QUEUE_THREAD_ID }}
+      #     content: |
+      #       **🖼️ HTML to Image deployed**
             
-            [${{ github.actor }}](https://github.com/${{ github.actor }}) deployed ${{ steps.git-info.outputs.escaped-git-message }}
+      #       [${{ github.actor }}](https://github.com/${{ github.actor }}) deployed ${{ steps.git-info.outputs.escaped-git-message }}
             
-            [${{ steps.git-info.outputs.git-sha }}](https://github.com/campsite/campsite/commit/${{ github.sha }}) · [Run logs](https://github.com/campsite/campsite/actions/runs/${{ github.run_id }})
+      #       [${{ steps.git-info.outputs.git-sha }}](https://github.com/campsite/campsite/commit/${{ github.sha }}) · [Run logs](https://github.com/campsite/campsite/actions/runs/${{ github.run_id }})
 
-      - name: Notify failure
-        if: ${{ failure() }}
-        uses: campsite/campsite-github-action@v1.0.0
-        with:
-          api_key: ${{ secrets.CAMPBOT_API_KEY }}
-          action_type: create_message
-          thread_id: ${{ env.DEPLOY_QUEUE_THREAD_ID }}
-          content: |
-            **🚨 HTML to Image deploy failed!**
+      # - name: Notify failure
+      #   if: ${{ failure() }}
+      #   uses: campsite/campsite-github-action@v1.0.0
+      #   with:
+      #     api_key: ${{ secrets.CAMPBOT_API_KEY }}
+      #     action_type: create_message
+      #     thread_id: ${{ env.DEPLOY_QUEUE_THREAD_ID }}
+      #     content: |
+      #       **🚨 HTML to Image deploy failed!**
             
-            [${{ github.actor }}](https://github.com/${{ github.actor }}) tried to deploy ${{ steps.git-info.outputs.escaped-git-message }}
+      #       [${{ github.actor }}](https://github.com/${{ github.actor }}) tried to deploy ${{ steps.git-info.outputs.escaped-git-message }}
             
-            [${{ steps.git-info.outputs.git-sha }}](https://github.com/campsite/campsite/commit/${{ github.sha }}) · [Run logs](https://github.com/campsite/campsite/actions/runs/${{ github.run_id }})
+      #       [${{ steps.git-info.outputs.git-sha }}](https://github.com/campsite/campsite/commit/${{ github.sha }}) · [Run logs](https://github.com/campsite/campsite/actions/runs/${{ github.run_id }})

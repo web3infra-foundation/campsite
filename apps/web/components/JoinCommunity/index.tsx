@@ -108,7 +108,7 @@ export function JoinCommunityPageComponent() {
               <Button href='/new' variant='primary'>
                 Explore Campsite
               </Button>
-              <Button href='https://campsite.com' externalLink variant='flat'>
+              <Button href='https://gitmono.com' externalLink variant='flat'>
                 Learn more
               </Button>
             </div>

@@ -152,7 +152,7 @@ class DataExport < ApplicationRecord
 
   def ecs_client
     @ecs_client ||= Aws::ECS::Client.new(
-      region: "us-east-1",
+      region: "ap-southeast-2",
       credentials: Aws::Credentials.new(
         Rails.application.credentials&.dig(:aws_ecs, :access_key_id),
         Rails.application.credentials&.dig(:aws_ecs, :secret_access_key),

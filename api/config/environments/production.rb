@@ -101,19 +101,16 @@ Rails.application.configure do
 
   config.active_record.async_query_executor = :global_thread_pool
 
-  config.hosts << "admin.benjamin747.com"
-  config.hosts << "auth.benjamin747.com"
-  config.hosts << "api.benjamin747.com"
-  config.hosts << "benjamin747.com"
+  # config.hosts << "admin.benjamin747.com"
+  # config.hosts << "auth.benjamin747.com"
+  # config.hosts << "api.benjamin747.com"
+  # config.hosts << "benjamin747.com"
 
   config.hosts << "admin.gitmono.com"
   config.hosts << "auth.gitmono.com"
   config.hosts << "api.gitmono.com"
   config.hosts << "gitmono.com"
 
-  # config.hosts << "admin.campsite.com"
-  # config.hosts << "auth.campsite.com"
-  # config.hosts << "api.campsite.com"
 
   config.hosts << "mega-campsite-api.fly.dev"
 
