@@ -33,12 +33,8 @@ const cspResourcesByDirective = {
   'connect-src': [
     "'self'",
     'blob:',
-    'https://*.campsite.design',
-    'wss://*.campsite.design',
-    'https://*.campsite.co',
-    'wss://*.campsite.co',
-    'https://*.campsite.com',
-    'wss://*.campsite.com',
+    'https://*.gitmono.com',
+    'wss://*.gitmono.com',
     process.env.NODE_ENV !== 'production' && 'http://api.campsite.test:3001',
     process.env.NODE_ENV !== 'production' && 'ws://localhost:9000',
     'https://campsite-media.s3.amazonaws.com',
@@ -121,9 +117,7 @@ const moduleExports = {
   images: {
     unoptimized: true,
     domains: [
-      'app.campsite.design',
-      'app.campsite.co',
-      'app.campsite.com',
+      'app.gitmono.com',
       'app.campsite.test',
       'avatars.slack-edge.com',
       'campsite.imgix.net',
