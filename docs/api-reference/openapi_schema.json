@@ -4,13 +4,13 @@
     "title": "Campsite API",
     "version": "2.0.0",
     "contact": {
-      "email": "support@campsite.com"
+      "email": "support@gitmono.com"
     },
     "description": "This is the internal documentation for our public REST API. Use this as a starting point for hacking on projects. We'll build a proper documentation site later.\n\n⚠️  This API is a work in progress! Field and endpoint names are subject to change, and not all endpoints have been added yet.\n"
   },
   "servers": [
     {
-      "url": "https://api.campsite.com"
+      "url": "https://api.gitmono.com"
     }
   ],
   "paths": {
