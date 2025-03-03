@@ -18,7 +18,7 @@ export function ZapierIntegration() {
                 Create posts, comments, and chat messages automatically.{' '}
                 <Link
                   className='text-blue-500 hover:underline'
-                  href='https://app.campsite.com/campsite/p/notes/connecting-campsite-to-zapier-exr89eu8xins'
+                  href='https://app.gitmono.com/campsite/p/notes/connecting-campsite-to-zapier-exr89eu8xins'
                   target='_blank'
                 >
                   Learn more
