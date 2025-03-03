@@ -43,7 +43,7 @@ export function FullPageError({ message, title = 'Something went wrong', emoji =
         <Button variant='primary' onClick={handleReset}>
           Back home
         </Button>
-        <Button href='mailto:support@campsite.com' externalLink>
+        <Button href='mailto:support@gitmono.com' externalLink>
           Get help
         </Button>
       </div>
