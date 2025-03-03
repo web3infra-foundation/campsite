@@ -20,7 +20,7 @@ export function PersonalCallLinks() {
         Share these links with anyone or add them to scheduling tools,{' '}
         <Link
           className='text-blue-500 hover:underline'
-          href='https://www.campsite.com/changelog/2024-07-18-personal-meeting-links'
+          href='https://www.gitmono.com/changelog/2024-07-18-personal-meeting-links'
           target='_blank'
         >
           like Notion Calendar and Calendly

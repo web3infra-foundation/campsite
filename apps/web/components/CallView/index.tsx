@@ -199,7 +199,7 @@ function MissingTranscript() {
   return (
     <div className='flex flex-col gap-2'>
       <UIText tertiary>No transcription available for this recording.</UIText>
-      <Link href='mailto:support@campsite.com' className='text-blue-500 hover:underline'>
+      <Link href='mailto:support@gitmono.com' className='text-blue-500 hover:underline'>
         <UIText inherit>Get in touch</UIText>
       </Link>
     </div>
@@ -245,7 +245,7 @@ function CallTranscript({
     return (
       <div className='flex flex-col gap-2'>
         <UIText tertiary>We had trouble parsing the recording for this transcription</UIText>
-        <Link href='mailto:support@campsite.com' className='text-blue-500 hover:underline'>
+        <Link href='mailto:support@gitmono.com' className='text-blue-500 hover:underline'>
           <UIText inherit>Get in touch</UIText>
         </Link>
       </div>

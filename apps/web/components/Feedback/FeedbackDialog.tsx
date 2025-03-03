@@ -230,7 +230,7 @@ export function FeedbackDialog() {
               <Button
                 className='self-start'
                 externalLink
-                href='https://app.campsite.com/guest/5r72qd3xuW1x4EHwHpw4'
+                href='https://app.gitmono.com/guest/5r72qd3xuW1x4EHwHpw4'
                 variant='primary'
                 onClick={() => setUpsellDismissed(true)}
               >
