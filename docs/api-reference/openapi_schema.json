@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "https://api.campsite.com"
+      "url": "https://api.gitmono.com"
     }
   ],
   "paths": {
