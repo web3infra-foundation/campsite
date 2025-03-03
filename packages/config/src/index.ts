@@ -21,7 +21,7 @@ export const DESKTOP_APP_PROTOCOL = IS_PRODUCTION ? 'campsite://' : 'campsite-de
 export const LAST_CLIENT_JS_BUILD_ID_LS_KEY = 'latest-js-time'
 
 export const RAILS_API_URL = IS_PRODUCTION
-  ? 'https://api.campsite.com'
+  ? 'https://api.gitmono.com'
   : process.env.NEXT_PUBLIC_API_URL || 'http://api.campsite.test:3001'
 
 const RAILS_AUTH_URL_PROD_COM = 'https://auth.campsite.com'

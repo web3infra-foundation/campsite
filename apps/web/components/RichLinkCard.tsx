@@ -47,7 +47,7 @@ function isTwitterUrl(url: URL) {
 }
 
 function isCampsiteUrl(url: URL) {
-  return url.host === location.host || (url.host === 'app.campsite.co' && location.host === 'app.campsite.com')
+  return url.host === location.host || (url.host === 'app.campsite.co' && location.host === 'app.gitmono.com')
 }
 
 export function RichLinkCard({

@@ -10,9 +10,9 @@ module.exports = function ({ jsxFactory, jsxFragment, ...buildOptions }) {
 
   // Define environment variables for the UI build
   const env = {
-    APP_URL: isProd ? `https://app.campsite.com` : `https://app-dev.campsite.com`,
-    AUTH_URL: isProd ? `https://auth.campsite.com` : `https://api-dev.campsite.com`,
-    API_URL: isProd ? `https://api.campsite.com` : `https://api-dev.campsite.com`,
+    APP_URL: isProd ? `https://app.gitmono.com` : `https://app-dev.gitmono.com`,
+    AUTH_URL: isProd ? `https://auth.gitmono.com` : `https://api-dev.gitmono.com`,
+    API_URL: isProd ? `https://api.gitmono.com` : `https://api-dev.gitmono.com`,
     PUSHER_KEY: isProd ? '1301e1180de87095b1c0' : '874a1de2f18896929939',
     PUSHER_APP_CLUSTER: 'us3',
     SLACKBOT_CLIENT_ID: isProd ? '3424176891222.3424180786422' : '3424176891222.4588976536711'
