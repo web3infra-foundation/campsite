@@ -99,7 +99,7 @@ export function ProfileDropdown({
       type: 'item',
       label: 'Support',
       leftSlot: <HelpIcon />,
-      url: `mailto:support@campsite.com`
+      url: `mailto:support@gitmono.com`
     },
     {
       type: 'item',
