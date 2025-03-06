@@ -299,13 +299,13 @@ class User < ApplicationRecord
   def generate_avatar_s3_key(mime_type)
     extension = Rack::Mime::MIME_TYPES.invert[mime_type]
 
-    "u/#{public_id}/a/#{SecureRandom.uuid}#{extension}"
+    "campsite/u/#{public_id}/a/#{SecureRandom.uuid}#{extension}"
   end
 
   def generate_cover_photo_presigned_post_fields(mime_type)
     extension = Rack::Mime::MIME_TYPES.invert[mime_type]
 
-    PresignedPostFields.generate(key: "u/#{public_id}/cp/#{SecureRandom.uuid}#{extension}", max_file_size: AvatarUrls::AVATAR_MAX_FILE_SIZE, mime_type: mime_type)
+    PresignedPostFields.generate(key: "campsite/u/#{public_id}/cp/#{SecureRandom.uuid}#{extension}", max_file_size: AvatarUrls::AVATAR_MAX_FILE_SIZE, mime_type: mime_type)
   end
 
   def generate_login_token!(sso_id: nil)
