@@ -60,7 +60,7 @@
         "https://fonts.gstatic.com",
         "https://api.gitmono.com",
         "https://auth.gitmono.com",
-        "https://gitmono.s3.amazonaws.com",
+        "https://gitmono.s3.ap-southeast-2.amazonaws.com",
         "https://gitmono.imgix.net",
         "https://res.cloudinary.com",
         "https://sockjs-us3.pusher.com",
