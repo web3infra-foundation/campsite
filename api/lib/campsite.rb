@@ -8,10 +8,10 @@ module Campsite
   PROD_DESKTOP_APP_PROTOCOL = "campsite://"
 
   DEV_STYLED_TEXT_API_URL = URI.parse("http://localhost:3002")
-  PROD_STYLED_TEXT_API_URL = URI.parse("http://styled-text-server.internal:9000")
+  PROD_STYLED_TEXT_API_URL = URI.parse("http://mega-styled-text-server.internal:9000")
 
   DEV_HTML_TO_IMAGE_URL = URI.parse("http://localhost:9222")
-  PROD_HTML_TO_IMAGE_URL = URI.parse("http://html-to-image.internal:9222")
+  PROD_HTML_TO_IMAGE_URL = URI.parse("http://mega-html-to-image.internal:9222")
 
   DEV_MARKETING_SITE_URL = URI.parse("http://localhost:3003")
   PROD_MARKETING_SITE_URL = URI.parse("https://gitmono.com")
