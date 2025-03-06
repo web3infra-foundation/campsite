@@ -65,7 +65,7 @@ RUN if [ -f "yarn.lock" ]; then \
 
 FROM base
 
-ARG PROD_PACKAGES="postgresql-client file vim curl gzip libsqlite3-0 default-libmysqlclient-dev ruby-mysql2 libjemalloc2 ffmpeg"
+ARG PROD_PACKAGES="postgresql-client file vim curl gzip libsqlite3-0 default-libmysqlclient-dev ruby-mysql2 libjemalloc2 ffmpeg wget gnupg lsb-release"
 ENV PROD_PACKAGES=${PROD_PACKAGES}
 
 RUN --mount=type=cache,id=prod-apt-cache,sharing=locked,target=/var/cache/apt \
