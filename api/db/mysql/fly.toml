@@ -1,0 +1,33 @@
+# fly.toml app configuration file generated for mysql-bitter-water-2834 on 2025-03-05T16:33:05+08:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "campsite-mysql"
+primary_region = "iad"
+kill_signal = "SIGINT"
+kill_timeout = 60
+
+[experimental]
+  auto_rollback = true
+
+[build]
+
+[[services]]
+  protocol = 'tcp'
+  internal_port = 3306
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 1
+
+  [[services.ports]]
+    port = 3306
+    handlers = ['tls', 'proxy_proto']
+
+[[mounts]]
+  source = "mysql_data"
+  destination = "/var/lib/mysql"
+
+[[vm]]
+  size = "shared-cpu-2x"
+  memory = "1024mb"

@@ -53,7 +53,7 @@ Rails.application.configure do
 
   # Include generic and useful information about system operation, but avoid logging too much
   # information to avoid inadvertent exposure of personally identifiable information (PII).
-  config.log_level = :info
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags.
   config.log_tags = [:request_id]
@@ -101,20 +101,13 @@ Rails.application.configure do
 
   config.active_record.async_query_executor = :global_thread_pool
 
-  config.hosts << "admin.campsite.design"
-  config.hosts << "auth.campsite.design"
-  config.hosts << "api.campsite.design"
+  config.hosts << "admin.gitmono.com"
+  config.hosts << "auth.gitmono.com"
+  config.hosts << "api.gitmono.com"
+  config.hosts << "gitmono.com"
 
-  config.hosts << "admin.campsite.co"
-  config.hosts << "auth.campsite.co"
-  config.hosts << "api.campsite.co"
-
-  config.hosts << "admin.campsite.com"
-  config.hosts << "auth.campsite.com"
-  config.hosts << "api.campsite.com"
-
-  config.hosts << "campsite-api.fly.dev"
+  config.hosts << "mega-campsite-api.fly.dev"
 
   # required to access the app via Fly private network
-  config.hosts << "campsite-api.internal"
+  config.hosts << "mega-campsite-api.internal"
 end

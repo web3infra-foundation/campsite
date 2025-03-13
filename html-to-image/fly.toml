@@ -1,24 +1,29 @@
-# fly.toml app configuration file generated for html-to-image on 2023-07-05T16:34:55-04:00
+# fly.toml app configuration file generated for mega-html-to-image on 2025-03-10T14:54:33+08:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "html-to-image"
-primary_region = "iad"
-kill_timeout = 60
-
-[env]
-  PORT = "9222"
-  NODE_ENV = "production"
+app = 'mega-html-to-image'
+primary_region = 'iad'
+kill_timeout = '1m0s'
 
 [experimental]
-  allowed_public_ports = []
   auto_rollback = true
+
+[build]
+
+[env]
+  NODE_ENV = 'production'
+  PORT = '9222'
 
 [[services]]
   internal_port = 9222
   force_https = true
-  auto_stop_machines = true
+  auto_stop_machines = 'stop'
   auto_start_machines = true
-  min_machines_running = 0
-  processes = ["app"]
+  min_machines_running = 1
+  processes = ['app']
+
+[[vm]]
+  size = 'shared-cpu-1x'
+  memory = "512mb"

@@ -1,10 +1,10 @@
-const WEB_URL_PROD = 'https://app.campsite.com'
+const WEB_URL_PROD = 'https://app.gitmono.com'
 const WEB_URL_DEV = 'http://app.campsite.test:3000'
 
-const SITE_URL_PROD = 'https://www.campsite.com'
+const SITE_URL_PROD = 'https://www.gitmono.com'
 const SITE_URL_DEV = 'http://campsite.test:3003'
 
-const SYNC_URL_PROD = 'wss://sync.campsite.com'
+const SYNC_URL_PROD = 'wss://sync.gitmono.com'
 const SYNC_URL_DEV = 'ws://localhost:9000'
 
 export const IS_PRODUCTION = process.env.NODE_ENV === 'production'
@@ -21,10 +21,10 @@ export const DESKTOP_APP_PROTOCOL = IS_PRODUCTION ? 'campsite://' : 'campsite-de
 export const LAST_CLIENT_JS_BUILD_ID_LS_KEY = 'latest-js-time'
 
 export const RAILS_API_URL = IS_PRODUCTION
-  ? 'https://api.campsite.com'
+  ? 'https://api.gitmono.com'
   : process.env.NEXT_PUBLIC_API_URL || 'http://api.campsite.test:3001'
 
-const RAILS_AUTH_URL_PROD_COM = 'https://auth.campsite.com'
+const RAILS_AUTH_URL_PROD_COM = 'https://auth.gitmono.com'
 
 export const RAILS_AUTH_URL = IS_PRODUCTION
   ? RAILS_AUTH_URL_PROD_COM
@@ -34,7 +34,7 @@ export const RAILS_AUTH_URL = IS_PRODUCTION
   Not using an env variable because we use this variable in the browser, which
   requires extra config with Next.js to send env variables to the browser.
 */
-export const IMGIX_DOMAIN = IS_PRODUCTION ? 'https://campsite.imgix.net' : 'https://campsite-dev.imgix.net'
+export const IMGIX_DOMAIN = IS_PRODUCTION ? 'https://gitmono.imgix.net' : 'https://campsite-dev.imgix.net'
 
 export const FIGMA_PLUGIN_URL = 'https://www.figma.com/community/plugin/1108886817260186751'
 export const ZAPIER_APP_URL = 'https://zapier.com/apps/campsite/integrations'

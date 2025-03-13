@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Aws.config.update({
-  region: "us-east-1",
+  region: "ap-southeast-2",
   credentials: Aws::Credentials.new(
     Rails.application.credentials&.dig(:aws, :access_key_id),
     Rails.application.credentials&.dig(:aws, :secret_access_key),

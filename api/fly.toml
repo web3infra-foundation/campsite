@@ -3,7 +3,7 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "campsite-api"
+app = "mega-campsite-api"
 primary_region = "iad"
 kill_signal = "SIGINT"
 kill_timeout = 60
@@ -31,6 +31,9 @@ kill_timeout = 60
   protocol = "tcp"
   internal_port = 8080
   processes = ["web"]
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 1
 
   [[services.ports]]
     port = 80
@@ -56,5 +59,10 @@ kill_timeout = 60
   url_prefix = "/"
 
 [[vm]]
+  size = "shared-cpu-1x"
+    memory = "512mb"
+
+[[vm]]
   size = "shared-cpu-2x"
-  memory = "1536mb"
+  memory = "1024mb"
+  processes = ["web"]
