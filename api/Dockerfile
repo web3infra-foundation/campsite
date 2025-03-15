@@ -33,7 +33,7 @@ RUN volta install node@${NODE_VERSION} && volta install yarn
 
 FROM base as build_deps
 
-ARG DEV_PACKAGES="git build-essential libpq-dev wget vim curl gzip xz-utils libsqlite3-dev default-libmysqlclient-dev ruby-mysql2"
+ARG DEV_PACKAGES="git build-essential libpq-dev wget vim curl gzip xz-utils libsqlite3-dev default-libmysqlclient-dev ruby-mysql2 libyaml-dev"
 ENV DEV_PACKAGES ${DEV_PACKAGES}
 
 RUN --mount=type=cache,id=dev-apt-cache,sharing=locked,target=/var/cache/apt \
