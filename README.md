@@ -2,6 +2,13 @@
 
 This is an open source version of the [Campsite](https://www.campsite.com/) app. This codebase is available **as-is** and is not actively maintained by the Campsite team. We will only consider pull requests and issues regarding self-hosting or critical fixes. The codebase is provided as a reference for those interested in learning how Campsite works. We welcome forks of this repository for use in non-commercial projects.
 
+## 使用 Docker 构建部署
+
+```bash
+cd api
+docker buildx build . -t mega:campsite-0.1.0-pre-release --build-arg RUBY_VERSION=3.3.4 --build-arg NODE_VERSION=23.10.0 --build-arg BUNDLER_VERSION=2.6.5
+```
+
 ## Local dev setup
 
 To get started, run this command from the workspace root:
