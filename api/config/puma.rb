@@ -19,7 +19,7 @@ worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 #
 port ENV.fetch("PORT") { 3000 }
 
-bind "tcp://fly-local-6pn:#{ENV["PORT"] || 3000}"
+bind "tcp://0.0.0.0:#{ENV["PORT"] || 3000}"
 
 # Specifies the `environment` that Puma will run in.
 #
