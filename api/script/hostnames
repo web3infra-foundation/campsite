@@ -8,7 +8,7 @@ ETC_HOSTS=/etc/hosts
 # DEFAULT IP FOR HOSTNAME
 IP="127.0.0.1"
 
-for HOSTNAME in "campsite.test" "app.campsite.test" "api.campsite.test" "auth.campsite.test" "admin.campsite.test"
+for HOSTNAME in "gitmono.test" "app.gitmono.test" "api.gitmono.test" "auth.gitmono.test" "admin.gitmono.test"
 do
     echo "> Adding $HOSTNAME to your etc/hosts file.";
     HOSTS_LINE="$IP\t$HOSTNAME"

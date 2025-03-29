@@ -39,7 +39,7 @@ namespace :dev do
         redirect_uri: "TODO",
       },
       campsite: {
-        api_url: "http://api.campsite.test:3001",
+        api_url: "http://api.gitmono.test:3001",
       },
       figma: {
         client_id: "TODO",

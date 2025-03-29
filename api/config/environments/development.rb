@@ -41,7 +41,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: "campsite.test", port: 3001, scheme: "http" }
+  config.action_mailer.default_url_options = { host: "gitmono.test", port: 3001, scheme: "http" }
   config.action_mailer.delivery_method = :letter_opener_web
   # config.action_mailer.delivery_method = :postmark
   # config.action_mailer.postmark_settings = {
@@ -80,11 +80,8 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
-  config.hosts << "admin.campsite.test"
-  config.hosts << "auth.campsite.test"
-  config.hosts << "api.campsite.test"
-  config.hosts << "campsite.test"
-  config.hosts << /.+\.campsite\.design/
-  config.hosts << /.+\.campsite\.co/
-  config.hosts << /.+\.campsite\.com/
+  config.hosts << "admin.gitmono.test"
+  config.hosts << "auth.gitmono.test"
+  config.hosts << "api.gitmono.test"
+  config.hosts << "gitmono.test"
 end
