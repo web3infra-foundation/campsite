@@ -122,53 +122,27 @@ jobs:
     uses: ./.github/workflows/deploy-api.yml
     secrets: inherit
 
-  deploy-sync-server:
-    needs: [target-determinator, deploy-api]
-    # this needs to run if API or sync server is skipped, but not if it fails
-    if: |
-      always() &&
-      (
-        github.event.inputs.force ||
-        needs.target-determinator.outputs.sync-server-changes == 'true'
-      ) &&
-      (
-        needs.deploy-api.result == 'success' || 
-        needs.deploy-api.result == 'skipped'
-      )
-    uses: ./.github/workflows/deploy-sync-server.yml
-    secrets: inherit
 
-  deploy-web:
-    needs: [target-determinator, deploy-api, deploy-sync-server]
-    # this needs to run if API or sync server is skipped, but not if it fails
-    if: |
-      always() &&
-      (
-        github.event.inputs.force ||
-        needs.target-determinator.outputs.web-changes == 'true'
-      ) &&
-      (
-        needs.deploy-api.result == 'success' || 
-        needs.deploy-api.result == 'skipped'
-      ) &&
-      (
-        needs.deploy-sync-server.result == 'success' || 
-        needs.deploy-sync-server.result == 'skipped'
-      )
-    uses: ./.github/workflows/deploy-web.yml
-    secrets: inherit
-
-  # deploy-elasticsearch:
-  #   needs: target-determinator
-  #   if: ${{ github.event.inputs.force || needs.target-determinator.outputs.elasticsearch-changes == 'true' }}
-  #   uses: ./.github/workflows/deploy-elasticsearch.yml
+  # deploy-web:
+  #   needs: [target-determinator, deploy-api]
+  #   # this needs to run if API or sync server is skipped, but not if it fails
+  #   if: |
+  #     always() &&
+  #     (
+  #       github.event.inputs.force ||
+  #       needs.target-determinator.outputs.web-changes == 'true'
+  #     ) &&
+  #     (
+  #       needs.deploy-api.result == 'success' || 
+  #       needs.deploy-api.result == 'skipped'
+  #     ) &&
+  #     (
+  #       needs.deploy-sync-server.result == 'success' || 
+  #       needs.deploy-sync-server.result == 'skipped'
+  #     )
+  #   uses: ./.github/workflows/deploy-web.yml
   #   secrets: inherit
 
-  # deploy-logs:
-  #   needs: target-determinator
-  #   if: ${{ github.event.inputs.force || needs.target-determinator.outputs.logs-changes == 'true' }}
-  #   uses: ./.github/workflows/deploy-logs.yml
-  #   secrets: inherit
 
   deploy-html-to-image:
     needs: target-determinator

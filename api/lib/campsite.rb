@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Campsite
-  DEV_APP_URL = URI.parse(ENV.fetch("DEV_APP_URL", "http://app.campsite.test:3000"))
+  DEV_APP_URL = URI.parse(ENV.fetch("DEV_APP_URL", "http://app.gitmono.test:3000"))
   PROD_DOT_COM_APP_URL = URI.parse("https://app.gitmono.com")
 
   DEV_DESKTOP_APP_PROTOCOL = "campsite-dev://"

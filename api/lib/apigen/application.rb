@@ -406,15 +406,12 @@ module Apigen
       {
         openapi: "3.0.0",
         info: {
-          title: "Campsite API",
+          title: "Gitmono API",
           version: "2.0.0",
-          contact: {
-            email: "support@campsite.com",
-          },
         },
         servers: [
           {
-            url: "https://api.campsite.com",
+            url: "https://api.gitmono.com",
           },
         ],
         paths: swagger_paths,

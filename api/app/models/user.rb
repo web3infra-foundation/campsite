@@ -125,7 +125,7 @@ class User < ApplicationRecord
     :rememberable,
     :two_factor_authenticatable,
     :validatable,
-    omniauth_providers: [:google_oauth2, :desktop]
+    omniauth_providers: [:google_oauth2, :github, :desktop]
 
   devise :two_factor_backupable,
     otp_backup_code_length: 20,
