@@ -4,6 +4,7 @@ require "sidekiq/web"
 require "sidekiq-scheduler/web"
 
 Rails.application.routes.draw do
+  get "/health", to: "health#check"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   if Rails.env.development?

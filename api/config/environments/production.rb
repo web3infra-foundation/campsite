@@ -106,8 +106,16 @@ Rails.application.configure do
   config.hosts << "api.gitmono.com"
   config.hosts << "gitmono.com"
 
-  config.hosts << "mega-campsite-api.fly.dev"
+  # config.hosts << "mega-campsite-api.fly.dev"
 
+  # 允许 AWS VPC 中常见的私有 IP 网段访问
+  config.hosts += [
+    /10\.\d+\.\d+\.\d+/,     # 10.0.0.0/8
+    /172\.16\.\d+\.\d+/,     # 172.16.0.0/12
+    /172\.17\.\d+\.\d+/,     # Docker 默认
+    /172\.31\.\d+\.\d+/,     # AWS 默认 VPC 网段
+    /192\.168\.\d+\.\d+/,    # 192.168.0.0/16
+  ]
   # required to access the app via Fly private network
-  config.hosts << "mega-campsite-api.internal"
+  # config.hosts << "mega-campsite-api.internal"
 end

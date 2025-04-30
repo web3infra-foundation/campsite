@@ -4,7 +4,7 @@ class UpdateCoToComLinkJob < BaseJob
   sidekiq_options queue: "background"
 
   OLD_DOMAIN = "https://app.campsite.co/"
-  NEW_DOMAIN = "https://app.campsite.com/"
+  NEW_DOMAIN = "https://app.gitmono.com/"
 
   def perform(subject_id, subject_type)
     if subject_type == "Post"
