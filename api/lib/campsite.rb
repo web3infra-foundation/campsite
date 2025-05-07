@@ -2,7 +2,7 @@
 
 module Campsite
   DEV_APP_URL = URI.parse(ENV.fetch("DEV_APP_URL", "http://app.gitmono.test:3000"))
-  PROD_DOT_COM_APP_URL = URI.parse("https://app.gitmono.com")
+  PROD_DOT_COM_APP_URL = URI.parse("http://app.gitmega.com")
 
   DEV_DESKTOP_APP_PROTOCOL = "campsite-dev://"
   PROD_DESKTOP_APP_PROTOCOL = "campsite://"
