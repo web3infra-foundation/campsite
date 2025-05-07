@@ -79,12 +79,12 @@ gem "streamio-ffmpeg"
 group :development, :test do
   gem "factory_bot_rails"
   gem "faker"
+  gem "debug", require: false
 end
 
 group :development do
   gem "web-console"
   gem "letter_opener_web"
-  gem "debug", require: false
 
   gem "planetscale_rails"
   gem "rubocop-rails"

@@ -9,7 +9,7 @@ This is the API that powers https://app.campsite.com
 
 ### Running the app
 
-The API can be started with `script/server`. The API is accessible on http://api.campsite.test:3001 and the frontend on http://app.campsite.test:3000 (after you've run `vercel dev` in that repo).
+The API can be started with `script/server`. The API is accessible on http://api.gitmono.test:3001 and the frontend on http://app.gitmono.test:3000 (after you've run `vercel dev` in that repo).
 
 ### Useful commands & shortcuts
 
@@ -39,7 +39,7 @@ end
 
 ### Emails
 
-When you invite users in dev, or create new accounts etc you'll send/receive emails. These can be accessed (via the letter_opener_web) gem on http://api.campsite.test:3001/preview-emails
+When you invite users in dev, or create new accounts etc you'll send/receive emails. These can be accessed (via the letter_opener_web) gem on http://api.gitmono.test:3001/preview-emails
 (currently the stylesheet is broken, but you have a list of the emails at the top and then you can view them in an iframe at the bottom). If you're inviting a new user, make sure you log out with your existing user before you
 click the link in the email :)
 
@@ -78,7 +78,7 @@ Sometimes, we need our development instance of Campsite to be accessible to the 
 
 We use [Flipper](https://github.com/jnunemaker/flipper) for feature flagging. The [Flipper features docs](https://www.flippercloud.io/docs/features) are a good overview of how we can programmatically check and enable feature flags in our Ruby code.
 
-Once you're logged in as [a staff user](https://github.com/campsite/campsite-api/blob/59f0ac37d16dd267a70f0b2e118d925d2e986a60/app/models/user.rb#L102-L104), our Features UI is accessible at [https://admin.campsite.com/admin/features](https://admin.campsite.com/admin/features) (or [http://admin.campsite.test:3001/admin/features](http://admin.campsite.test:3001/admin/features) in development).
+Once you're logged in as [a staff user](https://github.com/campsite/campsite-api/blob/59f0ac37d16dd267a70f0b2e118d925d2e986a60/app/models/user.rb#L102-L104), our Features UI is accessible at [https://admin.campsite.com/admin/features](https://admin.campsite.com/admin/features) (or [http://admin.gitmono.test:3001/admin/features](http://admin.gitmono.test:3001/admin/features) in development).
 
 Depending on how we check if a flag is enabled in code, an actor could be any kind of ActiveRecord model. Often, we'll check flags against users, like this:
 

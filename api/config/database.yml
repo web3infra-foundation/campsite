@@ -30,13 +30,13 @@ test:
   primary:
     <<: *default
     database: campsite_api_test
-    host: 127.0.0.1
+    host: <%= ENV['MYSQL_HOST'] %>
     username: <%= ENV.fetch("MYSQL_USER") { "root" } %>
     password: <%= ENV['MYSQL_PASSWORD'] %>
   primary_replica:
     <<: *default
     database: campsite_api_test
-    host: 127.0.0.1
+    host: <%= ENV['MYSQL_HOST'] %>
     username: <%= ENV.fetch("MYSQL_USER") { "root" } %>
     password: <%= ENV['MYSQL_PASSWORD'] %>
     replica: true

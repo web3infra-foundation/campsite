@@ -106,6 +106,11 @@ Rails.application.configure do
   config.hosts << "api.gitmono.com"
   config.hosts << "gitmono.com"
 
+  config.hosts << "admin.gitmega.com"
+  config.hosts << "auth.gitmega.com"
+  config.hosts << "api.gitmega.com"
+  config.hosts << "gitmega.com"
+
   # config.hosts << "mega-campsite-api.fly.dev"
 
   # 允许 AWS VPC 中常见的私有 IP 网段访问
