@@ -108,10 +108,10 @@ Rails.application.configure do
   config.hosts << "gitmono.com"
 
   # TODO:配置对应域名
-  config.hosts << "admin.gitmega-staging.com"
-  config.hosts << "auth.gitmega-staging.com"
-  config.hosts << "api.gitmega-staging.com"
-  config.hosts << "gitmega-staging.com"
+  config.hosts << "admin.gitmega.com"
+  config.hosts << "auth.gitmega.com"
+  config.hosts << "api.gitmega.com"
+  config.hosts << "gitmega.com"
 
   # config.hosts << "mega-campsite-api.fly.dev"
 
