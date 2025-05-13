@@ -101,17 +101,16 @@ Rails.application.configure do
 
   config.active_record.async_query_executor = :global_thread_pool
 
-  
-  config.hosts << "admin.gitmono.com"
-  config.hosts << "auth.gitmono.com"
-  config.hosts << "api.gitmono.com"
-  config.hosts << "gitmono.com"
+  config.hosts << "admin.gitmega.com"
+  config.hosts << "auth.gitmega.com"
+  config.hosts << "api.gitmega.com"
+  config.hosts << "gitmega.com"
 
-  # TODO:配置对应域名
+  # TODO: 配置对应域名
   config.hosts << "admin.staging.gitmega.com"
   config.hosts << "auth.staging.gitmega.com"
   config.hosts << "api.staging.gitmega.com"
-  config.hosts << "gitmega.staging.com"
+  config.hosts << "staging.gitmega.com"
 
   # config.hosts << "mega-campsite-api.fly.dev"
 
