@@ -104,8 +104,6 @@ Rails.application.configure do
   config.hosts << "admin.gitmega.com"
   config.hosts << "auth.gitmega.com"
   config.hosts << "api.gitmega.com"
-  config.hosts << "local.gitmega.com"
-  config.hosts << "home.gitmega.com"
   config.hosts << "gitmega.com"
 
 
