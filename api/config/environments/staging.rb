@@ -124,4 +124,15 @@ Rails.application.configure do
   ]
   # required to access the app via Fly private network
   # config.hosts << "mega-campsite-api.internal"
+
+  Rails.application.config.middleware.insert_before 0, Rack::Cors do
+    allow do
+      origins 'http://admin.gitmega.com', 'http://auth.gitmega.com', 'http://api.gitmega.com', 'http://home.gitmega.com'
+
+      resource '*',
+        headers: :any,
+        methods: [:get, :post, :put, :patch, :delete, :options, :head],
+        credentials: true
+    end
+  end
 end
