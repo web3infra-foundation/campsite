@@ -17,6 +17,7 @@ Rails.application.config.middleware.insert_before(0, Rack::Cors) do
       "localhost:3000",
       "campsite-api.fly.dev",
       "http://home.gitmega.com",
+      "http://local.gitmega.com",
       "http://git.gitmega.com"
 
 
