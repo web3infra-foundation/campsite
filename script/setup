@@ -1,16 +1,35 @@
 #!/bin/bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-source ~/.nvm/nvm.sh && nvm install && nvm use
 
-brew install tmux overmind flyctl pnpm yarn
+# get the current OS type
+# macOS: Darwin
+OS_TYPE=$(uname -s)
+
+nvm install 20
+nvm use 20
+
+if [ "$OS_TYPE" = "Darwin" ]; then
+    # macOS use brew to install dependencies
+    brew install tmux overmind flyctl pnpm yarn
+elif [ "$OS_TYPE" = "Linux" ]; then
+    # Ubuntu/Debian use apt to install dependencies
+    sudo apt update
+    sudo apt install -y tmux
+    gem install overmind
+    # install flyctl
+    curl -L https://fly.io/install.sh | sh
+    export FLYCTL_INSTALL="$HOME/.fly"
+    export PATH="$FLYCTL_INSTALL/bin:$PATH"
+    # install pnpm and yarn
+    npm install -g pnpm yarn
+fi
 
 # Setup API
 (cd api && script/setup)
 
 # Setup Elasticsearch
 docker pull docker.elastic.co/elasticsearch/elasticsearch:8.8.0
-docker network create elastic
-docker rm -f elasticsearch
+docker network create elastic || true
+docker rm -f elasticsearch || true
 docker create --name elasticsearch --net elastic -p 9200:9200 -e discovery.type=single-node -e ES_JAVA_OPTS="-Xms1g -Xmx1g" -e xpack.security.enabled=false -it docker.elastic.co/elasticsearch/elasticsearch:8.8.0
 
 # Setup JS monorepo
