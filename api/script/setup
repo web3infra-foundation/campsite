@@ -3,8 +3,15 @@
 set -e
 
 if [ "$1" = "--pristine" ]; then
-	export SETUP_PRISTINE=1
+    export SETUP_PRISTINE=1
 fi
+
+OS_TYPE=$(uname -s)
+
+export MYSQL_HOST="localhost"
+export MYSQL_PORT="3306"
+export MYSQL_USER="root"
+export MYSQL_PASSWORD="root"
 
 echo "\nInstalling bundler and gems...\n============================================================"
 bundle install --local
@@ -15,25 +22,52 @@ yarn install
 echo "\033[1;32mJavascript dependencies installed.\033[0m"
 
 if [ -n "$SETUP_PRISTINE" ]; then
-	echo "\nDropping existing databases...\n============================================================"
-	mysql -u root -e 'DROP DATABASE IF EXISTS campsite_api_development; DROP DATABASE IF EXISTS campsite_api_test;'
+    echo "\nDropping existing databases...\n============================================================"
+    if [ "$OS_TYPE" = "Darwin" ]; then
+        mysql -u root -e 'DROP DATABASE IF EXISTS campsite_api_development; DROP DATABASE IF EXISTS campsite_api_test;'
+    else
+        docker run --rm -i --network host mysql:8.0 mysql -u root -proot -e 'DROP DATABASE IF EXISTS campsite_api_development; DROP DATABASE IF EXISTS campsite_api_test;'
+    fi
 fi
 
 echo "\nChecking encryption keys...\n============================================================"
 bin/rails dev:setup_credentials
 
-echo "\nRunning redis-server in the background...\n============================================================"
-brew services restart redis &
+if [ "$OS_TYPE" = "Darwin" ]; then
+    echo "\nRunning redis-server in the background...\n============================================================"
+    brew services restart redis &
+    echo "\nSetting up database...\n============================================================"
+    brew services restart mysql@8.0
+    rails db:setup
+    echo "\nLoading time zones into database...\n============================================================"
+    mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql
+    brew services restart mysql@8.0
+    echo "\nShutting down redis-server...\n============================================================"
+    redis-cli shutdown
+else
+    echo "\nStarting MySQL and Redis with Docker...\n============================================================"
+    docker run -d \
+        --name campsite-mysql \
+        -e MYSQL_ROOT_PASSWORD=root \
+        -p 3306:3306 \
+        mysql:8.0 \
+        --default-authentication-plugin=mysql_native_password
+    docker run -d \
+        --name campsite-redis \
+        -p 6379:6379 \
+        redis:7
 
-echo "\nSetting up database...\n============================================================"
-brew services restart mysql@8.0
-rails db:setup
+    echo "Waiting for MySQL to be ready..."
 
-echo "\nLoading time zones into database...\n============================================================"
-mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql
-brew services restart mysql@8.0
+    sleep 10  # wait for MySQL to start
 
-echo "\nShutting down redis-server...\n============================================================"
-redis-cli shutdown
+    echo "\nSetting up database...\n============================================================"
+    rails db:setup
+    echo "\nLoading time zones into database...\n============================================================"
+    docker exec -i campsite-mysql bash -c "mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root -proot mysql"
+    echo "\nShutting down redis-server and mysql...\n============================================================"
+    docker stop campsite-redis
+    # docker stop campsite-mysql
+fi
 
 echo "\033[1;32mSetup completed!\033[0m"
