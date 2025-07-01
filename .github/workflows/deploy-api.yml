@@ -37,10 +37,6 @@ jobs:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             aws-region: us-east-1
-            # role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-            # role-external-id: ${{ secrets.AWS_ROLE_EXTERNAL_ID }}
-            # role-duration-seconds: 1200
-            # role-session-name: MySessionName
 
       - name: Login to Amazon ECR Public
         id: login-ecr-public
@@ -58,7 +54,18 @@ jobs:
         run: |
           docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG . --build-arg RUBY_VERSION=${{env.RUBY_VERSION}} --build-arg NODE_VERSION=${{env.NODE_VERSION}} --build-arg BUNDLER_VERSION=${{env.BUNDLER_VERSION}}
           docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
-          
+      
+      - name: Force ECS redeploy
+        run: |
+          aws ecs update-service \
+            --cluster gitmega-com \
+            --service campsite-api-staging-service-njx3hjyx \
+            --force-new-deployment
+        env:
+          AWS_REGION: ap-southeast-2
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
       # - name: Setup Fly
       #   uses: superfly/flyctl-actions/setup-flyctl@master
       # - name: Deploy API
