@@ -144,14 +144,14 @@ jobs:
   #   secrets: inherit
 
 
-  deploy-html-to-image:
-    needs: target-determinator
-    if: ${{ github.event.inputs.force || needs.target-determinator.outputs.html-to-image-changes == 'true' }}
-    uses: ./.github/workflows/deploy-html-to-image.yml
-    secrets: inherit
+  # deploy-html-to-image:
+  #   needs: target-determinator
+  #   if: ${{ github.event.inputs.force || needs.target-determinator.outputs.html-to-image-changes == 'true' }}
+  #   uses: ./.github/workflows/deploy-html-to-image.yml
+  #   secrets: inherit
 
-  deploy-styled-text-server:
-    needs: target-determinator
-    if: ${{ github.event.inputs.force || needs.target-determinator.outputs.styled-text-server-changes == 'true' }}
-    uses: ./.github/workflows/deploy-styled-text-server.yml
-    secrets: inherit
+  # deploy-styled-text-server:
+  #   needs: target-determinator
+  #   if: ${{ github.event.inputs.force || needs.target-determinator.outputs.styled-text-server-changes == 'true' }}
+  #   uses: ./.github/workflows/deploy-styled-text-server.yml
+  #   secrets: inherit
