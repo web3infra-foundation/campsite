@@ -79,6 +79,8 @@ api/config/credentials/production.key
 api/config/credentials/development.key
 api/config/credentials/development.yml.enc
 
+api/config/credentials/staging.key
+api/config/credentials/staging-nju.key
 # Ignore ngrok.yaml, we'll generate from ngrok.yml.template
 api/ngrok.yaml
 
@@ -98,3 +100,5 @@ dump.rdb
 # PostHog migrations and backups
 posthog_migration
 posthog_migration_batches
+
+api/gen/**
