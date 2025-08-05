@@ -105,6 +105,9 @@ Rails.application.configure do
   config.hosts << "auth.gitmega.nju"
   config.hosts << "api.gitmega.nju"
   config.hosts << "gitmega.nju"
+  config.hosts << "campsite-api.mega-rag.svc.cluster.local"
+  config.hosts << "localhost"
+  config.hosts << "127.0.0.1"
 
   # 允许 AWS VPC 中常见的私有 IP 网段访问
   config.hosts += [

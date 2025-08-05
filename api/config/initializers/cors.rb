@@ -15,11 +15,9 @@ Rails.application.config.middleware.insert_before(0, Rack::Cors) do
       "#{Campsite::DEV_APP_URL.hostname}:#{Campsite::DEV_APP_URL.port}",
       Campsite::PROD_DOT_COM_APP_URL.hostname,
       "localhost:3000",
-      "campsite-api.fly.dev",
-      "http://home.gitmega.com",
       "http://local.gitmega.com",
-      "http://git.gitmega.com"
-
+      "http://git.gitmega.com",
+      "http://app.gitmega.nju:8080"
 
     resource "*",
       headers: :any,
