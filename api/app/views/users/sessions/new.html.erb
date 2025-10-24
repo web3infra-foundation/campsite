@@ -11,7 +11,7 @@
       <h2 class="page-title">Sign in</h2>
 
       <span class="w-full text-sm text-tertiary">
-        New to Mega? <%= link_to "Sign up", new_user_registration_path(allow: true), class: "hover:underline font-medium text-link" %>
+        Login to Mega with Github Now
       </span>
     </div>
 
@@ -23,13 +23,9 @@
         </template>
         <%= form_tag omniauth_authorize_path(resource_name, :github), class: "js-github-oauth2" do %>
           <button type="submit" class="btn btn-secondary">
-            <svg width="16" height="16" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M43.2857 23.1363C43.2857 21.5924 43.1471 20.1079 42.8898 18.6827H22.3839V27.1048H34.1015C33.5968 29.8264 32.0628 32.1323 29.7569 33.6762V39.1392H36.7934C40.9105 35.3488 43.2857 29.767 43.2857 23.1363Z" fill="#4285F4"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M22.3839 44.4142C28.2625 44.4142 33.191 42.4645 36.7934 39.1392L29.7569 33.6763C27.8072 34.9826 25.3133 35.7546 22.3839 35.7546C16.713 35.7546 11.9131 31.9245 10.201 26.7783H2.92695V32.4194C6.50955 39.5351 13.8727 44.4142 22.3839 44.4142Z" fill="#34A853"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M10.201 26.7782C9.76556 25.4719 9.51814 24.0764 9.51814 22.6414C9.51814 21.2064 9.76556 19.8109 10.201 18.5046V12.8635H2.92694C1.45233 15.8028 0.611115 19.1281 0.611115 22.6414C0.611115 26.1547 1.45233 29.48 2.92694 32.4193L10.201 26.7782Z" fill="#FBBC05"/>
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M22.3839 9.52826C25.5805 9.52826 28.4505 10.6268 30.707 12.7843L36.9518 6.53946C33.1811 3.02613 28.2526 0.868652 22.3839 0.868652C13.8727 0.868652 6.50955 5.74772 2.92695 12.8634L10.201 18.5046C11.9131 13.3583 16.713 9.52826 22.3839 9.52826Z" fill="#EA4335"/>
+            <svg width="20" height="20" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
+              <path d="M12 1C5.923 1 1 5.923 1 12c0 4.867 3.149 8.979 7.521 10.436.55.096.756-.233.756-.522 0-.262-.013-1.128-.013-2.049-2.764.509-3.479-.674-3.699-1.292-.124-.317-.66-1.293-1.127-1.554-.385-.207-.936-.715-.014-.729.866-.014 1.485.797 1.691 1.128.99 1.663 2.571 1.196 3.204.907.096-.715.385-1.196.701-1.471-2.448-.275-5.005-1.224-5.005-5.432 0-1.196.426-2.186 1.128-2.956-.111-.275-.496-1.402.11-2.915 0 0 .921-.288 3.024 1.128a10.193 10.193 0 0 1 2.75-.371c.936 0 1.871.123 2.75.371 2.104-1.43 3.025-1.128 3.025-1.128.605 1.513.221 2.64.111 2.915.701.77 1.127 1.747 1.127 2.956 0 4.222-2.571 5.157-5.019 5.432.399.344.743 1.004.743 2.035 0 1.471-.014 2.654-.014 3.025 0 .289.206.632.756.522C19.851 20.979 23 16.854 23 12c0-6.077-4.922-11-11-11Z"></path>
             </svg>
-
             <span>Continue with Github</span>
           </button>
         <% end %>
@@ -43,6 +39,7 @@
     <%= form_for(resource, as: resource_name, url: user_session_path, html: { class: "w-full space-y-5" }) do |f| %>
       <%= render "users/shared/errors", resource: resource %>
 
+      <span>账户密码登录功能仅供Demo，测试请使用Github登录</span>
       <div class="form-group">
         <%= f.label(:email) %>
         <%= f.email_field(:email, autofocus: true, autocomplete: "email", required: true) %>
