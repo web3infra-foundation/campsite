@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2026_01_29_075537) do
+ActiveRecord::Schema[7.2].define(version: 2026_07_23_023000) do
   create_table "attachments", id: { type: :bigint, unsigned: true }, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "public_id", limit: 12, null: false
     t.text "file_path", null: false
@@ -1472,8 +1472,10 @@ ActiveRecord::Schema[7.2].define(version: 2026_01_29_075537) do
     t.datetime "notification_pause_expires_at"
     t.string "preferred_timezone"
     t.datetime "notifications_paused_at"
+    t.string "github_login"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true, length: 320
+    t.index ["github_login"], name: "index_users_on_github_login", unique: true
     t.index ["login_token"], name: "index_users_on_login_token", unique: true
     t.index ["omniauth_provider", "omniauth_uid"], name: "index_users_on_omniauth_provider_and_omniauth_uid", unique: true
     t.index ["public_id"], name: "index_users_on_public_id", unique: true

@@ -160,6 +160,14 @@ class User < ApplicationRecord
       found.confirm if found.skip_confirmation_notification! && found.save
     end
 
+    if access_token.provider.to_s == "github"
+      github_login = access_token.info.nickname.presence
+      if github_login.present? && found.github_login != github_login
+        found.github_login = github_login
+        found.save! if found.persisted?
+      end
+    end
+
     ImportRemoteUserAvatarJob.perform_async(found.id) if found.avatar_path && found.persisted?
     found
   end

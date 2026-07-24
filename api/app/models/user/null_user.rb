@@ -35,6 +35,10 @@ class User
       ""
     end
 
+    def github_login
+      nil
+    end
+
     def onboarded_at
       ""
     end

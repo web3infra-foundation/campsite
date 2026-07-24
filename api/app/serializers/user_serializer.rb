@@ -7,6 +7,7 @@ class UserSerializer < ApiSerializer
   api_field :cover_photo_url, nullable: true
   api_field :email
   api_field :username
+  api_field :github_login, nullable: true
   api_field :display_name
   api_field :system?, name: :system, type: :boolean
   api_field :integration?, name: :integration, type: :boolean
